@@ -1,0 +1,19 @@
+{
+  "name": "hopp",
+  "version": "1.0.0",
+  "description": "A simple Node.js client/server app to send data from somewhere and display it on the web from somewhere else",
+  "main": "receiver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Walter Macomber",
+  "license": "MIT",
+  "dependencies": {
+    "bufferutil": "^4.0.1",
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
+    "tail": "^2.0.3",
+    "utf-8-validate": "^5.0.2",
+    "ws": "^7.2.3"
+  }
+}

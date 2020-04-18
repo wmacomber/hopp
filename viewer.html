@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+    <style type="text/css">
+    body {
+        font-size: 10px;
+    }
+    .col_timestamp { width: 150px; }
+    .col_message { width: auto; }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th class="col_timestamp">Timestamp</th>
+                <th class="col_message">Message</th>
+            </tr>
+        </thead>
+        <tbody id="output_table">
+        </tbody>
+    </table>
+</body>
+<script>
+let ws = new WebSocket('ws://127.0.0.1:5000');
+ws.onmessage = (ev) => {
+    let packet = JSON.parse(ev.data);
+    let ot = document.getElementById('output_table');
+    let tr = document.createElement('tr');
+    tr.innerHTML = '<tr><td class="col_timestamp">' + packet.date + ' ' + packet.time + '</td><td class="col_message">' + packet.message + '</td></tr>';
+    ot.prepend(tr);
+};
+</script>
